@@ -1,0 +1,76 @@
+{
+  "items": [
+    {
+      "sys": { "id": "1" },
+      "fields": {
+        "title": "Capsicum",
+        "price": 10.99,
+        "UoM": " per KG",
+        "image": { "fields": { "file": { "url": "./images/product-Capsicum-1.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "2" },
+      "fields": {
+        "title": "Oranges",
+        "price": 12.99,
+        "UoM": " per KG",
+        "image": { "fields": { "file": { "url": "./images/product-oranges-1.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "3" },
+      "fields": {
+        "title": "Kiwi",
+        "price": 12.99,
+        "UoM": " per KG",
+        "image": { "fields": { "file": { "url": "./images/product-kiwi-1.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "4" },
+      "fields": {
+        "title": "Carrots",
+        "price": 22.99,
+        "UoM": " per KG",
+        "image": { "fields": { "file": { "url": "./images/product-carrots-1.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "5" },
+      "fields": {
+        "title": "Berries",
+        "price": 88.99,
+        "UoM": " per KG",
+        "image": { "fields": { "file": { "url": "./images/product-berries-1.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "6" },
+      "fields": {
+        "title": "Onions",
+        "price": 32.99,
+        "UoM": " per KG",
+        "image": { "fields": { "file": { "url": "./images/product-onion-1.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "7" },
+      "fields": {
+        "title": "Chery",
+        "price": 45.99,
+        "UoM": " per KG",
+        "image": { "fields": { "file": { "url": "./images/product-chery-1.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "8" },
+      "fields": {
+        "title": "Apples",
+        "price": 33.99,
+        "UoM": " per KG",
+        "image": { "fields": { "file": { "url": "./images/product-apples-1.jpg" } } }
+      }
+    }
+  ]
+}
