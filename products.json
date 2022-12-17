@@ -6,7 +6,7 @@
         "title": "Capsicum",
         "price": 10.99,
         "UoM": " per KG",
-        "image": { "fields": { "file": { "url": "./images/product-Capsicum-1.jpg" } } }
+        "image": { "fields": { "file": { "url": "./images/product-capsicum-1.jpg" } } }
       }
     },
     {
