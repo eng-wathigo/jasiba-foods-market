@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasiba Foods Log in/Sign up</title>
+    <!-- Font Awesome-->
+    <script src="https://kit.fontawesome.com/e9e8397b5d.js" crossorigin="anonymous"></script>
+    <!-- custome CSS-->
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+     <!-- LOg in -->
+     
+   <!-- LOg in -->
+
+    <div class="container-login ">                 
+        <form class="form " id="login" method="post" name="myform">
+            <h2 class="form__title">Login</h2>
+            <div class="form__message form__message--error">
+                
+            </div>
+            <div class="form__input-group">
+                <input class="form__input" autofocus placeholder="username or email"
+                type="text" name="username" id="username"/>
+                <div class="form__input-error-message"></div>
+    
+            </div>
+            <div class="form__input-group">
+                <input class="form__input" autofocus placeholder="password"
+                type="password" name="username" id="password"/>
+                <div class="form__input-error-message"></div>
+            </div>
+            
+            <button class="form__button" id="form__button" type="submit">Continue</button>
+                <p class="form__text">
+                    <a href="#" class="form__link">Forgot your password?</a>
+                </p>
+                <p class="form__text">
+                    <a class="form__link" id="linkCreateAccount" >Don't have an account?| create an account</a>
+                </p>
+    
+            
+               
+        </form>
+        <form class="form form--hidden" id="createAccount" method="post" name="myform">
+            <h2 class="form__title">Create Account</h2>
+            <div class="form__message form__message--error">
+                
+            </div>
+            <div class="form__input-group">
+                <input class="form__input" autofocus placeholder="username"
+                type="text" name="username" id="username"/>
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input class="form__input" autofocus placeholder="email"
+                type="email" name="username" id="email"/>
+                <div class="form__input-error-message"></div>
+    
+            </div>
+            <div class="form__input-group">
+                <input class="form__input" autofocus placeholder="password"
+                type="password" name="username" id="password"/>
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input class="form__input" autofocus placeholder="confirm password"
+                type="password" name="username" id="password"/>
+                <div class="form__input-error-message"></div>
+            </div>
+            <button class="form__button" type="submit">Continue</button>
+                
+                <p class="form__text">
+                    <a class="form__link" id="linkLogin" >Already registered? Log in</a>
+                </p>
+    
+            
+               
+        </form>
+            
+    </div>
+
+    <!--end Log in -->
+
+<script src="login.js"></script>
+
+</body>

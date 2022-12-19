@@ -1,6 +1,8 @@
 // variables
 
 const cartBtn = document.querySelector(".cart-btn")
+
+const bodyDOM =  document.querySelector(".body")
 const closeCartBtn =  document.querySelector(".close-cart")
 const clearCartBtn = document.querySelector(".clear-cart")
 const cartDOM = document.querySelector(".cart")
@@ -9,12 +11,41 @@ const cartItems =  document.querySelector(".cart-items")
 const cartTotal = document.querySelector(".cart-total")
 const cartContent =  document.querySelector(".cart-content")
 const productsDOM =  document.querySelector(".products-center")
+const categoriesDOM =  document.querySelector(".categories-center")
+const checkoutBtn = document.querySelector(".checkout")
+const openPopup = document.querySelector(".popup")
+const categoryBtn = document.querySelector(".category-btn")
 
 
 // cart
 let cart = [];
 //  buttons
 let buttonsDOM = [];
+
+//Category
+
+class Categories {
+    async getCategories(){
+        try {
+            let categoryResult = await fetch('products.json')
+            let data = await categoryResult.json();
+            let categories = data.groups;
+            categories = categories.map(group=>{
+                const {title} = group.fields;
+                const {id} = group.sys;
+                const image = group.fields.image.fields.file.url;
+                return {title,id,image}
+
+            })
+            return categories
+    
+    
+    } catch (error) {
+        console.log(error);
+    }
+       
+    }
+}
 
 //products
 
@@ -25,10 +56,10 @@ class Products {
             let data = await result.json();
             let products = data.items;
             products = products.map(item=>{
-                const {title,price,UoM} = item.fields;
+                const {title,price,UoM, category} = item.fields;
                 const {id} = item.sys;
                 const image = item.fields.image.fields.file.url;
-                return {title,price,UoM,id,image}
+                return {title,price,UoM,id,image,category}
 
             })
             return products
@@ -43,7 +74,30 @@ class Products {
 
 // diplay products
 class UI {
+    displayCategories(categories){
+        let categoryResult = '';
+        categories.forEach(category => {
+            categoryResult += `
+            <!-- Single category-->
+            <article class="category">
+                <div class="img-container">
+                    <img src=${category.image} alt="category" class="product-img"/>
+                    <button class="category-btn" data-id=${category.id}>
+                        <i class="fas fa-search"></i> Explore ${category.title}
+                    </button>                                        
+                </div>
+                <h3>${category.title}</h3>
+                
+            </article>
+
+            <!-- End of Single category-->
+            `;
+        });
+        categoriesDOM.innerHTML = categoryResult;
+    }
+
     displayProducts(products){
+        
         let result = '';
         products.forEach(product => {
             result += `
@@ -64,6 +118,7 @@ class UI {
         });
         productsDOM.innerHTML = result;
     }
+    
     getBagButtons(){
         const buttons = [...document.querySelectorAll(".bag-btn")];
         buttonsDOM = buttons;
@@ -104,7 +159,7 @@ class UI {
                 tempTotal += item.price * item.amount;
                 itemsTotal += item.amount;
             })
-            cartTotal.innerText = parseFloat(tempTotal.toFixed(2));
+            cartTotal.innerText = parseFloat(tempTotal.toFixed(1));
             cartItems.innerText = itemsTotal;           
 
         }
@@ -114,7 +169,7 @@ class UI {
             div.innerHTML = `<img src=${item.image} alt="product"/>
             <div>
                 <h4>${item.title}</h4>
-                <h5>KSHs. ${item.price} 30</h5>
+                <h5>KSHs. ${item.price}</h5>
                 <span class="remove-item" data-id=${item.id}>remove</span>
             </div>
             <div>
@@ -136,6 +191,11 @@ class UI {
             this.populateCart(cart);
             cartBtn.addEventListener('click', this.showCart);
             closeCartBtn.addEventListener('click', this.hideCart);
+            checkoutBtn.addEventListener('click', () => {
+                this.openPopup()});
+                     
+            
+            
 
         }
         populateCart(cart){
@@ -146,6 +206,12 @@ class UI {
             cartOverlay.classList.remove('transparentBcg');
             cartDOM.classList.remove('showCart');
         }
+        openPopup(){
+            popup.classList.add("open-popup");
+        }
+       
+        
+        
         cartLogic(){
             // clear cart button
             clearCartBtn.addEventListener('click', ()=>{
@@ -241,6 +307,7 @@ class Storage {
 document.addEventListener("DOMContentLoaded", ()=>{
     const ui = new UI();
     const products = new Products();
+    const categories = new Categories();
 //set up application
 ui.setUpApp();
     // get all products
@@ -250,4 +317,10 @@ ui.setUpApp();
        ui.getBagButtons();
        ui.cartLogic();
     });
+
+     // get all categories
+     categories.getCategories().then(categories => {ui.displayCategories(categories)
+        Storage.saveCategories(categories);
+        });
 });
+

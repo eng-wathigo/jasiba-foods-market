@@ -1,12 +1,54 @@
 {
+  "groups": [
+    {
+      "sys": { "id": "1" },
+      "fields": {
+        "title": "Cereal",
+        "image": { "fields": { "file": { "url": "./images/category-cereals-1.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "2" },
+      "fields": {
+        "title": "Fruits",
+        "image": { "fields": { "file": { "url": "./images/category-fruits-1.jpg" } } }
+      }
+    },
+
+    {
+      "sys": { "id": "3" },
+      "fields": {
+        "title": "Vegetables",
+        "image": { "fields": { "file": { "url": "./images/category-vegetables-1.jpg" } } }
+      }
+    },
+
+    {
+      "sys": { "id": "4" },
+      "fields": {
+        "title": "Heathy Nuts & Seeds",
+        "image": { "fields": { "file": { "url": "./images/category-healthyNuts-1.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "4" },
+      "fields": {
+        "title": "Milk and Milk Products",
+        "image": { "fields": { "file": { "url": "./images/category-milk-1.jpg" } } }
+      }
+    }
+  ],
+
+ 
   "items": [
     {
       "sys": { "id": "1" },
       "fields": {
         "title": "Capsicum",
-        "price": 10.99,
-        "UoM": " per KG",
-        "image": { "fields": { "file": { "url": "./images/product-capsicum-1.jpg" } } }
+        "category": "Vegetables",
+        "price": 50,
+        "UoM": " per pc",
+        "image": { "fields": { "file": { "url": "./images/product-Capsicum-1.jpg" } } }
       }
     },
     {
@@ -14,7 +56,7 @@
       "fields": {
         "title": "Oranges",
         "price": 12.99,
-        "UoM": " per KG",
+        "UoM": " per Pc",
         "image": { "fields": { "file": { "url": "./images/product-oranges-1.jpg" } } }
       }
     },

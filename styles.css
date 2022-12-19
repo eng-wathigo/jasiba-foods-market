@@ -7,6 +7,13 @@
   --mainGrey: #ececec;
   --mainSpacing: 0.1rem;
   --mainTransition: all 0.3s linear;
+
+  --color-primary: #009579;
+  --color-primary-dark: #007f67;
+  --color-seconadry: #252c6a;
+  --color-error: #cc3333;
+  --color-success: #4bb544;
+  --border-radius:4px;
 }
 * {
   margin: 0;
@@ -39,12 +46,37 @@ body {
     padding: 0 1.5rem;
   }
   .nav-icon {
-    font-size: 1.5rem;
+    font-size: 0.8rem;
+        
+  }
+  .user-btn {
+    font-size: 0.8rem;
+    margin: 0 0.2em;
+        
+  }
+  .fa-sign-in{
+    position: relative;
+    cursor: pointer;
+    margin-right: 0.5em;
+   border: 1px solid rgb(0, 255, 76);
+   padding: 5px;
+   border-radius: 5px;
+  }
+  .fa-sign-up{
+    margin-right: 0.5em;
+    border: 1px solid rgb(0, 255, 76);
+    padding: 5px;
+    border-radius: 5px;
+   }
+  .fa-phone {
+    margin-left: -1rem;
+    margin-right: 0.5rem;
   }
   .cart-btn {
     position: relative;
     cursor: pointer;
   }
+ 
   .cart-items {
     position: absolute;
     top: -8px;
@@ -56,25 +88,28 @@ body {
   }
 
   .navbar img {
-    height: 50px;
+    height: 40px;
+    width: 180px;
   }
   /* --------------- End of Navbar ---------------- */
   /* --------------- Hero ---------------- */
-.hero {
-  min-height: calc(100vh - 60px);
-  background: url("./images/hero-bcg-2.jpg") center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.banner {
-  text-align: center;
-  background: rgba(255, 255, 255, 0.8);
-  display: inline-block;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 0 20px 5px;
-}
+  .hero {
+    min-height: calc(100vh - 60px);
+    background: url("./images/hero-bcg-2.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .banner {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    display: inline-block;
+    padding: 2rem;
+  }
+  .contacts{
+    margin-top: 1em;
+    margin-bottom: -0em;
+  }
 .banner-title {
   font-size: 3.4rem;
   /*text-transform: uppercase;*/
@@ -94,6 +129,7 @@ body {
   transition: var(--mainTransition);
   cursor: pointer;
   box-shadow: 0 0 20px 5px;
+  border-radius: 20px;
 }
 .banner-btn:hover {
   background: transparent;
@@ -102,6 +138,45 @@ body {
 /* --------------- End of Hero ---------------- */
 /* --------------- Products ---------------- */
 
+.categories-center {
+  width: 90vw;
+  height: 100vh;
+  margin: 0 auto;
+  max-width: 1170px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-rows: none;
+  grid-column-gap: 1.5rem;
+  margin-bottom: -20em;
+}
+.category h3{
+  font-size: 15px;
+  text-align: center;
+}
+.category-btn {
+  position: absolute;
+  top: 70%;
+  right: 0;
+  background: var(--primaryColor);
+  border: none;
+  text-transform: uppercase;
+  padding: 0.5rem 0.75rem;
+  letter-spacing: var(--mainSpacing);
+  font-weight: bold;
+  transition: var(--mainTransition);
+  transform: translateX(101%);
+  cursor: pointer;
+}
+.category-btn:hover {
+  color: var(--mainWhite);
+}
+
+.fa-search {
+  margin-right: 0.5rem;
+}
+.img-container:hover .category-btn {
+  transform: translateX(0);
+}
 .products {
   padding: 4rem 0;
 }
@@ -121,10 +196,12 @@ body {
   grid-column-gap: 1.5rem;
   grid-row-gap: 2rem;
 }
+
 .img-container {
   position: relative;
   overflow: hidden;
 }
+
 .bag-btn {
   position: absolute;
   top: 70%;
@@ -151,7 +228,7 @@ body {
 .product-img {
   display: block;
   width: 100%;
-  min-height: 12rem;
+  min-height: 13rem;
   transition: var(--mainTransition);
   border: 1px solid var(--primaryColor);
   box-shadow: 0 0 20px 5px;
@@ -188,6 +265,8 @@ body {
   background: rgb(240, 157, 81, 0.5);
   z-index: 2;
   visibility: hidden;
+
+  
 }
 .cart {
   position: fixed;
@@ -201,6 +280,8 @@ body {
   padding: 1.5rem;
   transition: var(--mainTransition);
   transform: translateX(100%);
+  box-sizing: border-box;
+  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
 }
 .showCart {
   transform: translateX(0);
@@ -269,5 +350,267 @@ body {
   text-transform: capitalize;
   margin-bottom: 1rem;
 }
+.cart-end {
+  display: inline-flex;
+  
+  gap: 1em;
+}
+.cart-end button {
+  padding: 0.2em 0.5em;
+  width: auto;
+  height: auto;
+  text-align: center;
+  font-size: 12px;
+}
 
 /* --------------- End of Cart ---------------- */
+
+/* client contact submit */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
+
+input {
+  caret-color: red;
+}
+
+
+.inputs {
+  text-align: left;
+  margin-top: 30px;
+}
+.checkout{
+  padding: 0.2em 0.5em;
+  width: auto;
+  height: auto;
+  text-align: center;
+  font-size: 12px;
+  margin-left: 150px;
+}
+label, input {
+  display: block;
+  width: 90%;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  margin-bottom: 2em;
+  margin-left: 2em;
+}
+
+label {
+  margin-bottom: 4px;
+}
+
+label:nth-of-type(2) {
+  margin-top: 12px;
+}
+
+input::placeholder {
+  color: gray;
+}
+
+input {
+  background: #ecf0f3;
+  padding: 10px;
+  padding-left: 20px;
+  height: 50px;
+  font-size: 14px;
+  border-radius: 50px;
+  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+}
+
+.btn-banner-btn {
+  color: white;
+  margin-top: 20px;
+  background: #1DA1F2;
+  height: 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 900;
+  box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+  transition: 0.5s;
+}
+
+button:hover {
+  box-shadow: none;
+}
+
+/*end client contact */
+/*popup */
+.popup{
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  border-radius: 6px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  
+  transform: translate(-50%, -50%) scale(1);
+  text-align: center;
+  padding: 200px 30px 30px;
+  color: #333;
+  visibility: hidden;
+  transition: 0.4s, top 0.4s;
+
+}
+
+.open-popup{
+  visibility: visible;
+  
+}
+.popup img{
+  width: 100px;
+  margin-top: -50%;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup h2{
+  font-style: italic;
+  font-size: 30px;
+  font-weight: 500;
+  margin: 30px 0 10px;
+}
+
+.popup button {
+  width:100%;
+  margin-top: 50px;
+  padding: 10px 0;
+  background: #6fd649;
+  color: #fff;
+  border:0;
+  outline: none;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/* end popup */
+
+/*log */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,500;1,500&display=swap'); 
+
+.logIn-signUp {
+   
+
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    background: whitesmoke;
+    background-size: cover;
+
+    
+}
+
+.container-login{
+    width: 400px;
+    max-width: 400px;
+    margin: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0 60px rgba(183, 115, 115, 0.2);
+    border-radius: var(--border-radius);
+    border-color: #ffff;
+    
+
+}
+
+.container-login,
+.form__input,
+.form__button {
+    font: 500 1rem 'quicksand', sans-serif
+}
+.form--hidden {
+    display: none;
+}
+
+.form> *:first-child {
+    margin-top: 0;
+}
+
+.form> *:last-child {
+    margin-bottom: 0;
+}
+.form__title {
+    margin-bottom: 2rem;
+    text-align: center;
+
+}
+.form__message {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.form__message--success {
+    color: var(--color-success)
+}
+.form__message--error {
+    color: var(--color-error)
+}
+
+.form__input-group {
+    margin-bottom: 1rem;
+}
+.form__input{
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    border-radius: var(--border-radius);
+    border: 1px solid #dddddd;
+    outline: none;
+    background: #eeeeee;
+    transition: background 0.2s, border-color 0.2s;
+
+}
+
+.form__input:focus {
+    border-color: var(--color-primary);
+    background: #ffffff;
+}
+
+.form__input--error{
+    color: var(--color-error);
+    border-color: var(--color-error);
+}
+.form__input-error-message{
+    color: var(--color-error);
+   margin-top: 0.5rem;
+   font-size: 0.85rem;
+}
+
+.form__button{
+    width: 100%;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    background: var(--color-primary);
+    border-radius: var(--border-radius);
+}
+.form__button:hover {
+    background: var(--color-primary-dark);
+}
+
+.form__button:active {
+    transform: scale(0.98);
+}
+
+.form__text {
+    text-align: center;
+}
+.form__link{
+    color: var(--color-secondary);
+    text-decoration: none;
+    cursor: pointer;
+}
+.form__link:hover {
+    text-decoration: underline;
+}
+
+/* end log in */

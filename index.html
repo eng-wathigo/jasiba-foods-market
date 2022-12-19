@@ -9,15 +9,27 @@
     <script src="https://kit.fontawesome.com/e9e8397b5d.js" crossorigin="anonymous"></script>
     <!-- custome CSS-->
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="body" >
+<div id="body">
+   
     <!-- Nav Bar-->
     <nav class="navbar">
         <div class="navbar-center">
             <span class="nav-icon">
-                <i class="fas fa-bars"></i>
+                <i class='fa fa-phone'>0793881109</i>
             </span>
             <img src="images/jasiba2_logo.png" alt="Jasiba Foods"/>
+            <div>
+                <div>
+                    <p class="form__text">
+                        <a class="form__link" id="link-login" >log in</a>
+                    </p>
+                </div>
+                
+            </div>
+            
             <div class="cart-btn">
                 <span class="nav-icon">
                     <i class="fas fa-cart-plus"></i>
@@ -31,11 +43,27 @@
     <header class="hero">
         <div class="banner">
             <h1 class="banner-title">Fresh Vegetables & Fruits</h1>
-            <button class="banner-btn">Shop Now</button>
+            <button class="banner-btn">Scroll to Shop</button>
+            
         </div>
+        
     </header>
+    <div class="contacts">
+        <button class="banner-btn phone"><i class='fa fa-phone'>0793881109</i></button>
+    </div>
 
     <!-- End of hero -->
+    <!-- Categories-->
+    <section class="categories">
+        <div class="section-title">
+            <h2>Shop by Categories:</h2>
+        </div>
+        <div class="categories-center">
+           
+        </div>
+    </section>
+
+    <!-- end of categories -->
     <!-- Products-->
     <section class="products">
         <div class="section-title">
@@ -63,7 +91,30 @@
                 </div>
                 <div class="cart-footer">
                     <h3>Your Total: KSHs. <span class="cart-total"></span>0</h3>
-                    <button class="clear-cart banner-btn">clear cart</button>
+                    <div class="cart-end">
+                        <button class="clear-cart banner-btn">clear cart</button>
+                        
+                    </div>
+                    <div class="container">
+   
+                        <form class="inputs">
+                          <label>NAME:</label>
+                          <input type="text" placeholder="Your Name Please" />
+                          <label>WhatsAPP</label>
+                          <input type="tel" placeholder="Your WhatsAPP Number" />
+                          <span class="checkout banner-btn" >checkout</span>
+                          <div class="popup" id="popup">
+                            <img src="images/tick.png"/>
+                            <h2>Thank You!</h2>
+                            <p> Your Order has been successfully submitted</p>
+                            <button class="clear-cart">OK</button>
+                          </div>
+                          
+                        </form>
+                        
+                    </div>
+                    
+                    
 
                 </div>
 
@@ -73,6 +124,10 @@
     </div>
 
     <!--End of Cart-->
-    <script src="app.js"></script>
+</div>
+
+   
 </body>
+<script src="app.js"></script>
+
 </html>
