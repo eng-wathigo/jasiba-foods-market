@@ -48,7 +48,7 @@
         "category": "Vegetables",
         "price": 50,
         "UoM": " per pc",
-        "image": { "fields": { "file": { "url": "./images/product-Capsicum-1.jpg" } } }
+        "image": { "fields": { "file": { "url": "./images/product-capsicum-1.jpg" } } }
       }
     },
     {
