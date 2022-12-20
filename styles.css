@@ -147,7 +147,7 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-template-rows: none;
   grid-column-gap: 1.5rem;
-  margin-bottom: -20em;
+  
 }
 .category h3{
   font-size: 15px;
